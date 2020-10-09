@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('/todo', function () {
+//     return 'todo list';
+// });
+
+Route::get('/todo', function () {
+    return 'todo list';
+})->middleware('auth');

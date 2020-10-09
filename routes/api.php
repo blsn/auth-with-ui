@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PublisherController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// Route::get('publisher', [App\Http\Controllers\PublisherController::class, 'index']); // index
+// Route::get('publisher', 'App\Http\Controllers\PublisherController'); // invoke
+Route::get('publisher', 'App\Http\Controllers\PublisherController')->middleware(['api', 'auth:api']); // invoke
+
