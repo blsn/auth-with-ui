@@ -23,6 +23,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // Route::get('publisher', [App\Http\Controllers\PublisherController::class, 'index']); // index
-// Route::get('publisher', 'App\Http\Controllers\PublisherController'); // invoke
-Route::get('publisher', 'App\Http\Controllers\PublisherController')->middleware(['api', 'auth:api']); // invoke
+Route::get('publisher', 'App\Http\Controllers\PublisherController'); // invoke
+// Route::get('publisher', 'App\Http\Controllers\PublisherController')->middleware(['api', 'auth:api']); // invoke
 
